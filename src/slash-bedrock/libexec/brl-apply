@@ -179,7 +179,7 @@ cat <<EOF >/bedrock/run/zprofile
 
 # zsh does not read /etc/profile by default.  Some distros configure it to,
 # some do not.
-. /bedrock/run/profile
+[[ -o login ]] && . /bedrock/run/profile
 
 br_dedup_envvar() {
 	envvar=""
